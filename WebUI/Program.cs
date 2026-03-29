@@ -1,3 +1,7 @@
+using Data;
+using Microsoft.EntityFrameworkCore;
+using Services.Helpers;
+
 namespace WebUI
 {
     public class Program
@@ -8,6 +12,8 @@ namespace WebUI
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<BookCatalogDBContext>(options =>
+                options.UseSqlite($"Data Source={DbPath.GetPath()}"));
 
             var app = builder.Build();
 
