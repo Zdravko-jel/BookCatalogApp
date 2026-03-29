@@ -46,5 +46,11 @@ namespace Services.Implementations
                 .ThenInclude(r => r.User)
                 .FirstOrDefault(b => b.Id == id);
         }
+
+        public void Update(Book book)
+        {
+            _context.Books.Update(book);
+            _context.SaveChanges();
+        }
     }
 }

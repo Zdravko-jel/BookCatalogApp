@@ -16,5 +16,6 @@ namespace Services.Interfaces
         void Add(Book book);
 
         void Delete(int id);
+        void Update(Book book);
     }
 }

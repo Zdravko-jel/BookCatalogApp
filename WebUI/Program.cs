@@ -1,6 +1,8 @@
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Services.Helpers;
+using Services.Implementations;
+using Services.Interfaces;
 
 namespace WebUI
 {
@@ -14,6 +16,9 @@ namespace WebUI
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<BookCatalogDBContext>(options =>
                 options.UseSqlite($"Data Source={DbPath.GetPath()}"));
+            builder.Services.AddScoped<IBookService, BookService>();
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IReviewService, ReviewService>();
 
             var app = builder.Build();
 
@@ -34,7 +39,7 @@ namespace WebUI
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Books}/{action=Index}");
 
             app.Run();
         }

@@ -13,6 +13,8 @@ namespace Services.Interfaces
 
         User GetById(int id);
 
+        User GetByEmail(string email);
+
         List<User> GetAll();
     }
 }

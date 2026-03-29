@@ -1,0 +1,30 @@
+﻿@using Data
+@model Book
+
+<form method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <legend>Edit Book</legend>
+    
+    <div class="form-floating mb-3">
+        <input name="Title" type="text" class="form-control" id="floatingInput" placeholder="The title of the book.." value="@Model.Title">
+        <label for="floatingInput">Title</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="Authors" type="text" class="form-control" id="floatingInput" placeholder="The author/authors of the book.." value="@Model.Authors">
+        <label for="floatingInput">Authors</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="Genres" type="text" class="form-control" id="floatingInput" placeholder="The genre/genres of the book.." value="@Model.Genres">
+        <label for="floatingInput">Genres</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="Year" type="text" class="form-control" id="floatingInput" placeholder="The year when the book was written.." value="@Model.Year">
+        <label for="floatingInput">Year</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="ImageUrl" type="text" class="form-control" id="floatingInput" placeholder="An Url for the image of the book.." value="@Model.ImageUrl">
+        <label for="floatingInput">Image Url</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

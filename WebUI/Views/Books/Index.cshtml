@@ -1,0 +1,51 @@
+﻿@using Data
+@model List<Book>
+
+<div class="d-flex justify-content-center align-items-center mb-4" style="height: 200px;">
+    <form method="get" class="w-50">
+        <input name="search" class="form-control form-control-lg" placeholder="Search books..." />
+    </form>
+</div> 
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h2 class="mb-0">📚 Book Catalog</h2>
+
+    <a asp-action="Create" class="btn btn-success btn-lg">
+        + Add Book
+    </a>
+
+</div>
+
+<div class="container">
+    <div class="row">
+
+        @foreach (var book in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow">
+
+                    <img src="@(string.IsNullOrEmpty(book.ImageUrl)
+                                                         ? "https://via.placeholder.com/300x400"
+                                                         : book.ImageUrl)"
+                     class="card-img-top"
+                     style="height: 300px; object-fit: cover;" />
+
+                    <div class="card-body">
+                        <h5 class="card-title">@book.Title</h5>
+                        <p class="card-text">@book.Authors</p>
+                        <p class="card-text text-muted">@book.Genres</p>
+                    </div>
+
+                    <div class="card-footer text-center">
+                        <a asp-action="Details" asp-route-id="@book.Id" class="btn btn-info btn-sm">Details</a>
+                        <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-primary btn-sm">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@book.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </div>
+
+                </div>
+            </div>
+         }
+
+    </div>
+</div>

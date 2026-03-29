@@ -1,0 +1,28 @@
+﻿@using Data
+@model Book
+
+<form method="post">
+    <legend>Add Book</legend>
+    <div class="form-floating mb-3">
+        <input name="Title" type="text" class="form-control" id="floatingInput" placeholder="The title of the book..">
+        <label for="floatingInput">Title</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="Authors" type="text" class="form-control" id="floatingInput" placeholder="The author/authors of the book..">
+        <label for="floatingInput">Authors</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="Genres" type="text" class="form-control" id="floatingInput" placeholder="The genre/genres of the book..">
+        <label for="floatingInput">Genres</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="Year" type="text" class="form-control" id="floatingInput" placeholder="The year when the book was written..">
+        <label for="floatingInput">Year</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="ImageUrl" type="text" class="form-control" id="floatingInput" placeholder="An Url for the image of the book..">
+        <label for="floatingInput">Image Url</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

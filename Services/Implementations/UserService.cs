@@ -33,6 +33,11 @@ namespace Services.Implementations
             return _context.Users.ToList();
         }
 
+        public User GetByEmail(string email)
+        {
+            return _context.Users.Where(x => x.Email == email).FirstOrDefault();
+        }
+
         public User GetById(int id)
         {
             return _context.Users.Find(id);
