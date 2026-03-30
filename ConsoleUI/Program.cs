@@ -13,6 +13,10 @@ namespace ConsoleUI
                 .Options;
 
             var context = new BookCatalogDBContext(options);
+
+            var conole = new ConsoleUI(context);
+
+            conole.Run();   
         }
     }
 }
